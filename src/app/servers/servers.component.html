@@ -1,4 +1,29 @@
 <p>servers works!</p>
 <h3>style defined without css</h3>
+<label>Server Name</label>
+<p>input 1</p>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<p>input 2</p>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<p>{{ serverName }}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  New Server
+</button>
+
+<button
+  class="btn btn-success"
+  [disabled]="!allowNewServer"
+  (click)="disableServer()"
+>
+  Disable Server
+</button>
+
+<p [innerText]="allowNewServer"></p>
+<p>{{ serverCreationStatus }}</p>
+
 <app-server></app-server>
 <app-server></app-server>

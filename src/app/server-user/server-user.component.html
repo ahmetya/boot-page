@@ -1,0 +1,14 @@
+<input
+  type="text"
+  clas="form-control"
+  (input)="onUpdateUserName($event)"
+  [(ngModel)]="userName"
+/>
+<p>Username is: {{ userName }}</p>
+<button
+  [disabled]="!userNameResetStatus"
+  class="btn btn-primary"
+  (click)="resetUserName()"
+>
+  Set Username
+</button>
